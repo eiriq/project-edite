@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EDITE</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Century Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+            max-height: 60vh;
+            margin: 20px 0;
+            transition: transform 0.3s, filter 0.3s;
+            position: relative;
+        }
+
+        img::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('sparkles.png'); /* Adicione o caminho da imagem de faíscas */
+            background-size: cover;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: -1; /* Adicione esta linha para garantir que as faíscas estejam atrás da imagem */
+        }
+
+        img:hover::before {
+            opacity: 1;
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        img:hover, h1:hover, h2:hover {
+            transform: scale(1.1);
+            filter: brightness(1.5);
+        }
+
+        .rotateOnce {
+            animation: rotateAndBounce 1s ease-in-out forwards;
+        }
+
+        @keyframes rotateAndBounce {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        /* Adicione este estilo para o ícone de menu no canto esquerdo */
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 2;
+            transition: color 0.1s, transform 0.1s;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: #ffffff;
+            margin: 6px 0;
+            transition: 0.1s;
+        }
+
+        .menu-icon.clicked div:nth-child(1) {
+            transform: translateY(8px) rotate(-45deg); /* Primeira perna do hambúrguer */
+        }
+
+        .menu-icon.clicked div:nth-child(2) {
+            opacity: 0; /* Remova a segunda perna do hambúrguer */
+        }
+
+        .menu-icon.clicked div:nth-child(3) {
+            transform: translateY(-8px) rotate(45deg); /* Terceira perna do hambúrguer */
+        }
+
+        .menu-icon:hover {
+            color: #ff8c00; /* Laranja escuro ao passar o mouse */
+        }
+
+        /* Adicione este estilo para o menu dropdown */
+        .dropdown {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semitransparente */
+            border: 1px solid #fff;
+            padding: 20px;
+            z-index: 3;
+            animation: fadeInDropdown 0.1s ease forwards, slideInDropdown 0.1s ease forwards;
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Sombra */
+        }
+
+        .dropdown a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 15px 0;
+            transition: transform 0.1s; /* Adicione transição para animação de salto */
+            margin-bottom: 10px; /* Adicione margem inferior */
+        }
+
+        .dropdown a:hover {
+            transform: translateY(-5px); /* Adicione animação de salto ao passar o mouse */
+        }
+
+        .download-button {
+            background-color: #ff8c00;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #ff6f00;
+        }
+
+        .show {
+            display: block;
+            transform: translateY(0); /* Adicionado para corrigir a posição inicial do menu */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDropdown {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDropdown {
+            from {
+                transform: translateY(-10px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Edite</h1>
+    <img id="rotatingImage" src="edite.png" alt="Imagem" />
+    <h2>A nova revolução da IA</h2>
+
+    <!-- Adicione o ícone de menu no canto esquerdo -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Adicione o menu dropdown -->
+    <div class="dropdown" id="myDropdown">
+        <a href="PAGE1.html">Edite?</a>
+        <a href="PAGE2.html">Desenvolvedores</a>
+        <a href="PAGE3.html">Atualizações</a>
+        <button class="download-button" onclick="goToPage4()">Download</button>
+
+<script>
+    function goToPage4() {
+        window.location.href = "PAGE4.html";
+    }
+</script>
+
+    </div>
+
+    <script>
+        var isMenuOpen = false;
+        var menuIcon = document.querySelector('.menu-icon');
+        var dropdown = document.getElementById("myDropdown");
+        var isAnimating = false;
+
+        document.getElementById('rotatingImage').addEventListener('mouseenter', function() {
+            if (!this.classList.contains('rotateOnce')) {
+                this.classList.add('rotateOnce');
+            }
+        });
+
+        function toggleMenu() {
+            if (isAnimating) return;
+
+            isMenuOpen = !isMenuOpen;
+            isAnimating = true;
+
+            if (isMenuOpen) {
+                menuIcon.classList.add("clicked");
+                dropdown.classList.add("show");
+            } else {
+                menuIcon.classList.remove("clicked");
+                dropdown.classList.remove("show");
+            }
+
+            // Permitir nova animação após 300ms (ajuste conforme necessário)
+            setTimeout(() => {
+                isAnimating = false;
+            }, 300);
+        }
+
+        // Fechar o menu se clicar fora dele
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-icon') && !event.target.closest('.dropdown')) {
+                var dropdowns = document.getElementsByClassName("dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (isMenuOpen && !openDropdown.contains(event.target)) {
+                        openDropdown.classList.remove('show');
+                        isMenuOpen = false;
+                        menuIcon.classList.remove("clicked");
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

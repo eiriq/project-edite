@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Downloads</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Century Gothic', sans-serif;
+            margin: 0;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            text-align: center;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+            max-height: 60vh;
+            margin: 20px 0;
+            transition: transform 0.3s, filter 0.3s;
+            position: relative;
+        }
+
+        img::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('sparkles.png'); /* Adicione o caminho da imagem de faíscas */
+            background-size: cover;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: -1; /* Adicione esta linha para garantir que as faíscas estejam atrás da imagem */
+        }
+
+        img:hover::before {
+            opacity: 1;
+        }
+
+        h1 {
+            margin: 10px 0;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        img:hover, h1:hover {
+            transform: scale(1.1);
+            filter: brightness(1.5);
+        }
+
+        /* Adicione o botão de fechar no canto superior direito */
+        .close-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Adicione a imagem no centro superior -->
+    <img src="edite.png" alt="Imagem" />
+
+    <h1>Em Breve</h1>
+
+    <!-- Adicione o botão de fechar -->
+    <div class="close-button" onclick="goToIndex()">X</div>
+
+    <script>
+        function goToIndex() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

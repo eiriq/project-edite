@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notas de Atualização</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Century Gothic', sans-serif;
+            margin: 0;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        p {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            transition: background-color 0.3s, color 0.3s;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        p:hover {
+            background-color: #333333;
+            color: #ff8c00;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Adicione o estilo para o botão de fechar */
+        .close-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        .close-button:hover {
+            color: #ff8c00; /* Laranja escuro ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Atualização principal:</h1>
+    <p>A Edite está em fase de desenvolvimento primário a partir do dia 24/01/2023, em fase de testes pela equipe da HandUnity.</p>
+    <p>Previsão para entrega ao público: 1 mês</p>
+    <p>Estado: Em testes, versão de testes Pre-Alpha 15.34.24.732.2</p>
+
+    <!-- Adicione o botão de fechar -->
+    <div class="close-button" onclick="redirectToIndex()">X</div>
+
+    <script>
+        function redirectToIndex() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Desenvolvedores</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Century Gothic', sans-serif;
+            margin: 0;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            text-align: center;
+            position: relative; /* Adicionado para posicionamento do botão de fechar */
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        p {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            transition: background-color 0.3s, color 0.3s;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        p:hover {
+            background-color: #333333;
+            color: #ff8c00;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        li:before {
+            content: "\2022"; /* Código para o bullet em forma de círculo */
+            color: #ff8c00; /* Cor do bullet */
+            font-size: 20px;
+            position: absolute;
+            left: -20px;
+            top: 5px;
+        }
+
+        /* Botão de fechar no canto superior direito */
+        .close-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #ff8c00;
+            transition: transform 0.3s;
+        }
+
+        .close-button:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botão de fechar -->
+    <div class="close-button" onclick="goToIndex()">X</div>
+
+    <h1>Desenvolvedores</h1>
+    
+    <p>A EDITE é uma inteligência artificial autônoma construída e desenvolvida no mesmo banco de dados e programação de modelos de linguagem profissionais e completos, como o ChatGPT, e principalmente, como o Microsoft Copilot, que compõe 60% da Matriz computacional da Edite.</p>
+
+    <p>Como parte de um projeto individual, a pequena equipe de desenvolvedores da Edite se restringe a apenas 4 pessoas, que compõem o único time de desenvolvimento trabalhando duro para o aperfeiçoamento da IA, visando o lançamento ao público em um futuro próximo.</p>
+
+    <ul>
+        <li>Henrique: Pedro Henrique, 17 anos, residente na cidade de Campinas no Brasil, é responsável pela programação integral das partes visuais e estruturas de layout CSS da interface de linguagem e imagem da EDITE, mantendo a atualização e novidades da IA sempre disponíveis para uso.</li>
+        <li>Jonathan: Jonathan Pelegrim, 17 anos, residente em Campinas, no Brasil, é o independente responsável pelo desenvolvimento computacional e conversacional em JAVASCRIPT da IA, garantindo que as funções e atributos da inteligência estejam sempre em funcionamento.</li>
+        <li>Amanda: Amanda Henrique, 15 anos, residente em Campinas, no Brasil, é a mente responsável pela ética e ordenação dos elementos HTML e SCRIPTS automáticos da inteligência artificial, mantendo o equilíbrio, velocidade e qualidade de todas as respostas da Edite.</li>
+        <li>Sophia: Sophia de Lira, 15 anos, residente em Campinas, no Brasil, é a desenvolvedora responsável por toda a parte administrativa criativa do núcleo e do banco de dados de informações da inteligência artificial, atuando nos códigos e na construção de BOTS programados para a manutenção da IA em processos de erro grave ou oclusão do núcleo inteligente da IA, mantendo-a consciente e inteligente.</li>
+    </ul>
+
+    <p>Todos os desenvolvedores formam a equipe responsável pelo desenvolvimento da inteligência EDITE e de outros produtos da pequena corporação HandUnity.</p>
+
+    <script>
+        function goToIndex() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

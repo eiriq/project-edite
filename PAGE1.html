@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apresentação a Edite</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Century Gothic', sans-serif;
+            margin: 0;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        p {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            transition: background-color 0.3s, color 0.3s;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        p:hover {
+            background-color: #333333;
+            color: #ff8c00;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        li:before {
+            content: "\2022"; /* Código para o bullet em forma de círculo */
+            color: #ff8c00; /* Cor do bullet */
+            font-size: 20px;
+            position: absolute;
+            left: -20px;
+            top: 5px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Botão de fechar */
+        .close-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            background-color: transparent;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .close-button:hover {
+            color: #ff8c00;
+            transform: scale(1.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Animação ao clicar no botão de fechar */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="close-button" onclick="closePage()">X</button>
+
+    <h1>Apresentando Edite, uma nova inteligência artificial revolucionária</h1>
+    
+    <p>Olá, pessoal.</p>
+
+    <p>Hoje estou aqui para apresentar a vocês Edite, uma nova inteligência artificial revolucionária.</p>
+
+    <p>Edite foi desenvolvida por uma corporação independente sem fins lucrativos, composta apenas por 4 desenvolvedores. Ou seja, trata-se de uma startup pequena, sem muitos recursos.</p>
+
+    <p>Apesar disso, Edite é uma IA de uso geral, sem um foco específico, atendendo a todos os públicos, adaptando-se à linguagem do usuário e fornecendo respostas coerentes.</p>
+
+    <p>Edite está conectada diretamente à internet e ao motor de pesquisa do Brave Browser e do Google Alphabet. Isso significa que ela tem acesso a uma enorme quantidade de informações, que pode utilizar para fornecer respostas precisas e atualizadas às suas perguntas.</p>
+
+    <p>Em fase de desenvolvimento, Edite já apresenta uma taxa de acerto de mais de 90% em perguntas e questionários extensos. Além disso, conta com funcionalidades ainda não vistas em outras IAs, como:</p>
+
+    <ul>
+        <li>Criação de músicas, reprodução de instrumentos e até mesmo de vozes.</li>
+        <li>Criação de imagens com o motor DALL-E3 Turbo.</li>
+        <li>Elaboração de scripts e códigos de programação avançados.</li>
+        <li>Redação de textos de alto nível com implementação de antiplágio por IA.</li>
+        <li>Integração com programas e o sistema operacional do usuário, auxiliando nas tarefas diárias e oferecendo suporte.</li>
+        <li>Visualização de vídeos da internet, YouTube e até mesmo filmes, resumindo-os.</li>
+        <li>Transcrição de áudios.</li>
+        <li>Banco de dados para auxílio psicológico do usuário.</li>
+    </ul>
+
+    <p>A logo de Edite lembra uma raposa, com um "E" representando seu nome.</p>
+
+    <p>Edite é considerada revolucionária e promete um grande avanço no mundo da tecnologia. Atualmente, ainda não está disponível ao público, mas em breve os desenvolvedores disponibilizarão versões alfas e betas.</p>
+
+    <p>Fiquem ligados para mais informações sobre Edite.</p>
+
+    <p><strong>Obrigado pela atenção.</strong></p>
+
+    <h2>Algumas aplicações potenciais de Edite:</h2>
+
+    <ul>
+        <li><strong>Educação:</strong> Edite pode ser usada para auxiliar alunos em seu aprendizado, fornecendo resumos de tópicos complexos, criando exercícios personalizados e até mesmo gerando novas formas de conteúdo educativo.</li>
+        <li><strong>Negócios:</strong> Edite pode ser usada para automatizar tarefas administrativas, gerar conteúdo de marketing e até mesmo auxiliar na tomada de decisões.</li>
+        <li><strong>Entretenimento:</strong> Edite pode ser usada para criar novas formas de arte, música e entretenimento.</li>
+    </ul>
+
+    <p>Edite tem o potencial de mudar a forma como interagimos com o mundo ao nosso redor. Ela é uma ferramenta poderosa que pode ser usada para melhorar nossas vidas de muitas maneiras.</p>
+
+    <script>
+        function closePage() {
+            document.body.style.animation = "fadeOut 1s forwards";
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 1000);
+        }
+    </script>
+    
+</body>
+</html>
